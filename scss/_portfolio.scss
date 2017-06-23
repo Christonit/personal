@@ -1,0 +1,187 @@
+.portfolio-main{
+
+height: 100%;
+
+}
+
+
+.portfolio-main-1{
+  background: url("../imgs/Cadaques-Cover.jpg") center;
+  background-size: cover;
+}
+
+.portfolio-main-2{
+  background: url("../imgs/cgp-Cover.jpg") center;
+  background-size: cover;
+}
+
+.portfolio-main-3{
+  background: url("../imgs/Distribuidora-Cover.jpg") center;
+  background-size: cover;
+}
+
+
+.portfolio-main-4{
+  background: url("../imgs/colinas-Cover.jpg") center;
+  background-size: cover;
+}
+
+#portfolio-info{
+  width: 100%;
+  max-width: 960px;
+    margin: 2.5% auto;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap:wrap;
+position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+  }
+
+#portfolio-info h1{
+  width: 100%;
+  margin: 2%;
+  font-size: 3.2em;
+}
+
+.portfolio-detail{
+  width: 35%;
+  max-width: 350px;
+  display: inline-block;
+  text-align: right;
+
+}
+
+.portfolio-detail li span{
+    display: block;
+    width: 100%;
+    color: #fff;
+    font-weight: 700;
+}
+
+.portfolio-detail li{
+  margin: 5% 0;
+  color: rgba(255,255,255,0.7);
+}
+
+.portfolio-description{
+  width: 56%;
+  max-width: 650px;
+  display: inline-block;
+  margin: 1.5% 2.5%;
+
+}
+
+.portfolio-container{
+  width: 100%;
+display: inline-block;
+text-align: center;
+}
+
+.portfolio-imgs1{
+  width: 100%;
+  display: block;
+}
+
+.portfolio-imgs2{
+  width: 50%;
+  display: block;
+  float: left;
+}
+
+
+@media (max-width: 900px){
+
+.portfolio-main{
+padding: 120px 5%;
+height: auto;
+
+}
+
+.portfolio-detail {
+  width: 100%;
+  max-width: initial;
+  text-align: center;
+}
+
+
+.portfolio-detail li {
+  margin: 2.5% 1.5%;
+  padding: 5px;
+  display: inline-block;
+}
+
+.portfolio-description{
+  width: 100%;
+  max-width: 650px;
+  display: inline-block;
+  margin: 1.5% 2.5%;
+}
+
+.portfolio-description p{
+  text-align: center;
+
+}
+
+
+
+.portfolio-imgs2{
+  width: 100%;
+  display: block;
+  float: none;
+}
+
+
+#portfolio-info{
+  width: 100%;
+  max-width: 960px;
+    margin: 2.5% auto;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap:wrap;
+position: relative;
+  top: 40%;
+  transform: translateY(0);
+  }
+
+
+}
+
+
+
+@media (max-width: 580px){
+
+#portfolio-info {
+  top: inherit;
+  transform: inherit;
+  padding-bottom: 10 0px;
+  display: block; 
+
+}
+
+#portfolio-info h1{
+  font-size: 2.6em;
+  margin: 5% 0;
+}
+
+
+.portfolio-main{
+padding: 120px 2.5%;
+padding-bottom: 150px;
+
+}
+
+.portfolio-detail li {
+  margin: 1.5%;
+  width: 100%;
+  padding: 5px;
+  display: inline-block;
+}
+
+.portfolio-description{
+  margin: inherit;
+}
+
+
+
+}
