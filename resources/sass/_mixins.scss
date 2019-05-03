@@ -1,0 +1,70 @@
+
+@mixin breakpoint( $breakpoint ) {
+  @if map-has-key( $breakpoints, $breakpoint ) {
+    @media ( min-width: #{ map-get( $breakpoints, $breakpoint ) } ) {
+      @content;
+    }
+  } @else if type_of( $breakpoint ) == number and unit( $breakpoint ) == px or unit( $breakpoint ) == em or unit( $breakpoint ) == rem {
+    @media (min-width: $breakpoint ) {
+      @content;
+    }
+  } @else {
+    @warn "No value could be retrieved from `#{$breakpoint}`. "
+               + "It is either not defined in the `$breakpoints` map, or it is an invalid number of px, em, or rem.";
+  }
+}
+
+
+
+@mixin main_font{
+  font-family: Work Sans;
+  font-style: normal;
+}
+
+@mixin condensed_font{
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+}
+
+
+@mixin border-faded{
+  border:1px solid $white-fade;
+
+}
+@mixin paragraph_style{
+  font-weight: 500;
+  line-height: 1.4;
+  font-size: $text-m;
+  margin-bottom: 1.5rem;
+  color: $text-color;
+  @include breakpoint(sm){
+    font-size: $text;
+  }
+}
+
+@mixin link{
+  font-weight: 700;
+  line-height: 1.4;
+  font-size: $text;
+  // margin-bottom: 1.5rem;
+  color: $white;
+}
+
+
+@mixin paddingless-horizontal{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+@mixin gradient{
+  background:
+          linear-gradient($black, $black),
+          linear-gradient(180deg, $gold, $white 50%, $gold 100%);
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 200%;
+  background-position: 0 0, 0 100%;
+  background-origin: padding-box, border-box;
+  animation: highlight 1s infinite alternate;
+}

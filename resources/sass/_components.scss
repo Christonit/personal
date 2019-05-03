@@ -1,0 +1,137 @@
+@import "buttons";
+@import "portfolio";
+
+#cursor{
+  display: none;
+
+  width:8px;
+  height:8px;
+  background:$red;
+  border-radius:100%;
+  position:absolute;
+  // cursor: none;
+  z-index: 9999;
+  border: 1px solid transparent;
+  // transition: all 500ms;
+  @include breakpoint(sm){
+    display:block;
+  }
+  &--shadow{
+    display:none;
+    // cursor: none;
+    width:0;
+    height:0;
+
+    background:$white-fade;
+    border-radius:100%;
+    position:absolute;
+    z-index: 9000;
+    // transition: all 100ms;
+    @include breakpoint(sm){
+      display:block;
+
+    }
+
+  }
+
+
+
+}
+
+.cursor--halo{
+  width:0;
+  height:0;
+  // top:0;
+  // left:0;
+  // right:0;
+  // bottom:0;
+  opacity: 0;
+  border: 1px solid transparent;
+  position:absolute;
+  display:block;
+  transform-origin: center center;
+  border-radius: 50%;
+  // transition: all 500ms;
+}
+
+#scrollToTop{
+  display: block;
+  position: fixed;
+  z-index: 9999;
+  width: 4rem;
+  height: 4rem;
+  bottom: -64px;
+  right: 2rem;
+  border-radius: 50%;
+    @include breakpoint(sm){
+    // bottom: 8rem;
+    right: 6rem;
+
+  }
+
+  &:hover{
+
+    i{
+      color: $gold;
+    }
+  }
+  i{
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: all 500ms;
+
+  }
+}
+
+span[data-action='close']{
+  float: right;
+  opacity: 0;
+  position: relative;
+  display: block;
+
+}
+
+span{
+
+  &[data-slide-count] {
+    display: inline-block;
+    @include condensed_font;
+    line-height: 1;
+    padding: 0 16px;
+    font-size: $is-3-m;
+    text-align: center;
+    min-width: 32px;
+
+    @include breakpoint(sm){
+      min-width: inherit;
+      display: block;
+      line-height: 1.5;
+      font-size: $is-4;
+      padding: 0;
+
+    }
+
+    &:first-child{
+      padding: 0 12px 0 0;
+      @include breakpoint(sm){
+
+        padding: inherit;
+
+      }
+    }
+  }
+
+  &[data-slide-count='total']{
+    border-left: 1px solid $white;
+    @include breakpoint(sm){
+      border-top: 1px solid $white;
+      border-left: none;
+    }
+
+  }
+
+}

@@ -1,0 +1,58 @@
+
+footer{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  display: block;
+  background: $black;
+  z-index: 0;
+  min-height: 60vh;
+  padding: 6rem 2rem;
+
+  @include breakpoint(sm){
+    min-height: auto;
+    position: sticky;
+    z-index: 999;
+    bottom: 0;
+    text-align: inherit;
+    padding: inherit;
+  }
+  a{
+    margin-bottom: 1rem;
+    @include breakpoint(sm){
+      margin-bottom: inherit;
+    }
+  }
+
+  .columns {
+
+    margin:0;
+  }
+
+  .column{
+    @include paddingless-horizontal;
+
+    &:last-child{
+      display: flex;
+    }
+
+  }
+
+
+  .navbar-end{
+    align-items: end;
+
+    i{
+      font-size: $text;
+
+    }
+
+    .is-text{
+      margin: 0 0 2rem;
+
+      @include breakpoint(sm){
+        margin: inherit;
+      }
+    }
+  }
+}

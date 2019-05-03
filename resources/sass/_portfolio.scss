@@ -1,0 +1,376 @@
+
+.glide{
+
+  &__arrows {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    @include breakpoint(sm){
+      position: relative;
+      top: 110%;
+
+      width: auto;
+    }
+
+  }
+
+  &__arrow {
+    position: unset;
+    color: $black;
+    background: #fff;
+    font-size: 1.125rem;
+    border-radius: 0;
+    border: 1px solid $white;
+    font-weight: 700;
+    min-width: 148px;
+    max-width: 224px;
+    padding: 0.438rem 2rem;
+    line-height: 2;
+    cursor: none;
+
+    @include breakpoint(sm){
+      min-width: 212px;
+      text-align: center;
+      padding: 0.438rem 1.1rem;
+    }
+
+    i{
+      position: relative;
+      margin: 0;
+      top: 5px;
+
+    }
+
+    &--right{
+      i{
+        margin: 0;
+        left: 12px;
+      }
+
+    }
+
+    &--left{
+      i{
+        margin: 0 ;
+        right:12px;
+      }
+    }
+
+
+    &:hover{
+      background: none;
+      color: $white;
+      border-color: $gold;
+
+      i{
+        color: $white;
+      }
+    }
+  }
+
+  &__track {
+    overflow: unset;
+    z-index: 2;
+    position: relative;
+    margin-top: 4rem;
+    overflow-x: hidden;
+
+    @include breakpoint(sm){
+      margin-top: 0;
+      overflow-x: unset;
+
+    }
+  }
+
+
+  &__slides{
+    overflow: unset;
+    z-index: 9999;
+  }
+
+
+  &__slide{
+    // max-width: 400px;
+    height: 100%;
+    min-height: 400px;
+    display: flex;
+    opacity: 0.3;
+    transition: 300ms;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    @include breakpoint(xxxl){
+      min-height: 512px;
+    }
+    &--active{
+      opacity: 1;
+
+      .portfolio-el:hover{
+
+      }
+
+
+
+    }
+
+    a{
+      // pointer-events: none;
+      @include breakpoint(sm){
+        pointer-events: initial;
+      }
+    }
+  }
+
+  &--swipeable{
+    cursor: default;
+  }
+}
+
+
+
+
+.portfolio{
+
+
+
+  &-el{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    max-width: 480px;
+    transition: 300ms;
+    position: relative;
+    z-index: 9999;
+    transition: all 500ms ease-in;
+    @include breakpoint(sm){
+      padding: 2rem;
+      position: absolute;
+    }
+
+
+    @include breakpoint(xxxl){
+      max-width: 600px;
+    }
+
+    h3{
+      margin: 0.5rem 0;
+
+      @include breakpoint(sm){
+        margin: 1rem 0 0.75rem;
+      }
+
+    }
+
+    &.underconstruction{
+      padding: 2rem;
+      position: absolute;
+      min-height: 320px;
+      max-width: 416px;
+      display: flex;
+      width: 100%;
+      text-align: center;
+      align-content: center;
+      border: 1px solid $white-fade;
+      top:0;
+      height: auto;
+      transition: all 500ms ease-in;
+      @include breakpoint(xxxl){
+        top:1rem;
+        height: 100%;
+        max-height: 392px;
+      }
+
+      h3{
+        width: 100%;
+        margin: 0;
+      }
+
+      p{
+        margin:0;
+      }
+    }
+
+    &-details{
+      opacity: 0;
+      position: relative;
+      transition: 500ms;
+      margin-top: -125%;
+      @include breakpoint(sm){
+        margin-top: -200px;
+      }
+
+
+      h3{
+        opacity: 0;
+        transform: translate3d(0, -30%, 0);
+        transition: all 0.2s ease-in-out 0.1s;
+
+      }
+
+
+      .quote{
+        opacity: 0;
+        transition: all 0.2s ease-in 0.25s;
+
+      }
+
+
+      .button{
+        opacity: 0;
+        transition: all 0.2s ease-in 0.4s;
+      }
+
+
+    }
+
+
+    &:hover {
+      z-index: 9999;
+
+      border: 1px solid rgba(255,255,255,0);
+
+      background:
+              linear-gradient($black, $black),
+              linear-gradient(180deg, $white, $gold 50%, $white, $gold 100%);
+
+      background-repeat: no-repeat;
+      background-size: 100% 100%, 100% 200%;
+      background-position: 0 0, 0 100%;
+      background-origin: padding-box, border-box;
+      animation: highlight 3s infinite alternate;
+
+      transition: all 500ms ease-in;
+
+      .portfolio-el-details {
+
+        opacity: 1;
+
+        margin-top: 0;
+
+        h3{
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+
+        .quote{
+          opacity: 1;
+        }
+
+
+        .button{
+          opacity: 1;
+        }
+
+
+      }
+    }
+
+  }
+
+
+  &-el-img {
+    max-width: 420px;
+    height: auto;
+    overflow: hidden;
+    @include breakpoint(sm){
+      height: 332px;
+    }
+    @include breakpoint(xxxl){
+      height: 420px;
+      max-width: 600px;
+    }
+
+    img{
+      width: 100%;
+    }
+
+  }
+
+  &-active{
+    background:
+            linear-gradient($black, $black),
+            linear-gradient(180deg, $white, $gold 50%, $white, $gold 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%, 100% 200%;
+    background-position: 0 0, 0 100%;
+    background-origin: padding-box, border-box;
+    animation: highlight 3s infinite alternate;
+    transition: all 500ms ease-in;
+
+  }
+
+}
+
+#slide-counter{
+
+  display: block;
+  position: absolute;
+  top: 1rem;
+  z-index: 1;
+  width: 100%;
+
+  @include breakpoint(sm){
+    max-width: 128px;
+    width: auto;
+    position: absolute;
+    top: 22.5%;
+  }
+
+  @include breakpoint(lg){
+    left: 25%;
+  }
+
+  @include breakpoint(xxxl){
+    left: 25%;
+    // left: 30%;
+
+  }
+
+}
+
+#slide-progress-bar{
+  display: block;
+
+  height: 3px;
+  background: $gold;
+  position: relative
+}
+#slide-scroll-bar {
+  display: none;
+  @include breakpoint(sm){
+    display: block;
+  }
+  margin-top: 2rem;
+  border-bottom: 1px solid $white-fade;
+  z-index: 1;
+}
+
+
+#portfolio-container{
+  padding: 6rem 2rem 2rem;
+  height: 100vh;
+
+  @include breakpoint(sm){
+    // padding:18rem 2rem;
+    padding:8rem 2rem;
+    height: auto;
+  }
+
+  .glide{
+    display: flex;
+    align-items: baseline;
+    height: 100%;
+    flex-wrap: wrap;
+    transition: all 200ms ease-in;
+    @include breakpoint(sm){
+      align-items: center;
+
+      display: block
+
+    }
+  }
+}

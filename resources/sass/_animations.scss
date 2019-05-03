@@ -1,0 +1,72 @@
+
+
+@keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+
+
+@keyframes flicker {
+
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+    text-shadow:
+
+            0 0 0.25rem $neon,
+            0 0 0.5rem $neon,
+            0 0 1.25rem $neon,
+            0 0 1.5rem $neon,
+            0 0 2rem $neon;
+
+    // box-shadow:
+    //     0 0 .5rem #fff,
+    //     inset 0 0 .5rem #fff,
+    //     0 0 2rem var(--neon-border-color),
+    //     inset 0 0 2rem var(--neon-border-color),
+    //     0 0 4rem var(--neon-border-color),
+    //     inset 0 0 4rem var(--neon-border-color);
+  }
+
+  20%, 24%, 55% {
+    text-shadow: none;
+    // box-shadow: none;
+  }
+}
+
+
+@keyframes highlight {
+
+  100% {
+    background-position: 0 0, 0 0;
+  }
+}
+

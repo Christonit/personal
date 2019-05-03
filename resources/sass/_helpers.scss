@@ -1,0 +1,72 @@
+
+.has-stroke{
+  -webkit-text-stroke:2px $white;
+  color: rgba(255,255, 255,0.0);
+}
+
+
+small{
+  display: block;
+  @include main_font;
+  color: $text-color;
+  font-weight: 700;
+}
+
+
+
+.is-middle-aligned{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+
+.has-right-padding{
+
+  @include breakpoint(sm){
+  }
+
+  @include breakpoint(xxxl){
+    padding-right: 64px!important;
+  }
+
+  h2{
+    position: relative;
+
+    @include breakpoint(xl){
+      left: -32px;
+    }
+
+    @include breakpoint(xxxl){
+      left: 0;
+    }
+
+    .has-stroke{
+      @include breakpoint(sm){
+        display: block;
+      }
+    }
+
+
+  }
+
+}
+
+.gradient:hover{
+  background:
+          linear-gradient($black, $black),
+          linear-gradient(180deg, $white, $gold 50%, $white, $gold 100%);
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 100% 200%;
+  background-position: 0 0, 0 100%;
+  background-origin: padding-box, border-box;
+  animation: highlight 2s infinite alternate;
+}
+
+
+.neon{
+  color: rgba(0,0,0,0.5);
+  -webkit-text-stroke:2px $neon-color;
+  animation: flicker 1.5s infinite alternate;
+}

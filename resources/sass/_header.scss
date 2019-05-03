@@ -1,0 +1,157 @@
+
+#logo{
+  width: 60px;
+  overflow: hidden;
+  @include breakpoint(sm){
+    width:unset;
+  }
+
+  img{
+    max-width: none;
+    height: 100%;
+    max-height: 2.5rem;
+    @include breakpoint(sm){
+      max-height: 3.125rem;
+    }
+  }
+}
+
+.navbar{
+  position: fixed;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+  padding: 1.5rem 2rem;
+  @include breakpoint(sm){
+    background-color: rgba(0,0,0,0);
+    padding: 0.5rem 2rem;
+
+  }
+  &-item{
+    text-align: center;
+    img {
+    }
+
+
+  }
+  &-menu{
+    padding: 0.5rem 2rem;
+    margin: 0 -2rem;
+    height: 100vh;
+    background-color: black;
+    transform: translateY(800px);
+    transition-duration: 400ms;
+    opacity: 0.3;
+    @include breakpoint(sm){
+      opacity: 1;
+      transform: translateY(0);
+      padding: 0;
+      margin: auto;
+      height: auto;
+      background-color: unset;
+    }
+    a{
+      width: 100%;
+      margin: 1rem 0;
+      // min-width: 128px;
+      height: 44px;
+
+      text-align: center;
+
+      display: inline-block;
+
+      @include link;
+
+      padding: 0.875rem 1.1rem;
+      line-height: 10px;
+
+      @include breakpoint(sm){
+        width: auto;
+
+      }
+      &:hover{
+        color: $gold;
+        background: none;
+      }
+
+      &:not(.is-cta){
+
+        @include breakpoint(sm){
+          margin: 0 32px;
+
+        }
+      }
+    }
+  }
+
+  &-brand{
+    .navbar-item{
+      padding: 0;
+
+    }
+
+  }
+
+  &-end{
+    width: 100%;
+    align-items: center;
+  }
+
+  .button.is-primary{
+    border:1px solid $white-fade;
+    background: none;
+    display: inline-block;
+    line-height: 10px;
+
+    &:hover{
+      color: $white;
+      @include gradient;
+    }
+  }
+
+  &-burger{
+    height: 3rem;
+    width: 3.05rem;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    @include border-faded;
+    transition: transform 500ms;
+    span{
+      width: 2rem;
+      height: 2px;
+      left: 0.5rem;
+      &:nth-child(1) {
+        top: calc(50% - 12px);
+        //top: calc(50% - 12px);
+      }
+
+      &:nth-child(2) {
+        top: calc(50% - 1px);
+      }
+
+      &:nth-child(3) {
+        top: calc(50% + 10px);
+       // top: calc(50% + 10px);
+      }
+
+    }
+
+    &.is-active{
+      span{
+
+        &:nth-child(1) {
+          top: calc(50% - 6px);
+        }
+
+        &:nth-child(3) {
+          top: calc(50% + 4px);
+        }
+
+      }
+    }
+  }
+
+
+
+
+}
